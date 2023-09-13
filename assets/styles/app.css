@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "bootstrap-icons";
 @import "wave.css";
+@import "controls.css";
+
 @font-face {
     font-family: starfield;
     src: url('../fonts/BITSUMIS.TTF');
@@ -12,18 +14,26 @@ body {
 }
 .bg-nav{
     background-color: #05122d;
+}
+@media only screen and (max-width: 991px) {
+    .nav-dimensions{
+        width: 100%;
+        height: auto;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .nav-dimensions{
+        width: 18.5rem;
+    }
+}
 
-}
-.nav-dimensions{
-    width: 18.5rem;
-}
 .nav-link{
     font-size: 1.5em;
     color:white;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 4px 12px;
     width: 100%;
 }
+
 .nav-link:hover{
     background-color: white;
     color:#05122d;

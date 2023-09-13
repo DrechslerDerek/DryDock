@@ -1,0 +1,53 @@
+<turbo-frame id="tf-view">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <h1>Create A Part</h1>
+                <p>Create a part, from thrusters, to warp cores, cockpits with Alpaca seats to Neutrino missiles, the
+                    only limit is your imagination.</p>
+            </div>
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-11 d-flex">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col">
+                            <label class="star-input-label" for="#part-category">Part Category</label>
+                            <select class="form-select star-text-input"  aria-label="part category" id="part-category">
+                                <option value="cockpit">Cockpit</option>
+                                <option value="counter">Counter Measure</option>
+                                <option value="shield">Shield</option>
+                                <option value="thruster">Thruster</option>
+                                <option value="warp-core">Warp Core</option>
+                                <option value="weapon">Weapon</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label class="star-input-label" for="#part-name">Part Name</label>
+                            <input class="form-control star-text-input" type="text"  aria-label="part name" id="part-name">
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-9">
+                            <label class="star-input-label" for="#part-description">Description</label>
+                            <input class="form-control star-text-input" type="text"  aria-label="part description" id="part-description">
+                        </div>
+                        <div class="col-3">
+                            <label class="star-input-label" for="#part-power">Power</label>
+                            <input class="form-control star-text-input" type="number"  aria-label="part power" id="part-power">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-success fs-4 mt-5"><i class="bi bi-floppy me-2"></i> Save</button>
+                            <button type="button" class="btn btn-danger fs-4 mt-5"><i class="bi bi-trash me-2"></i> Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-middle w-100">
+                    <button class="btn btn-outline-dark btn-add fs-4"><i class="bi bi-plus fs-1"></i><br>Add Schematic</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</turbo-frame>

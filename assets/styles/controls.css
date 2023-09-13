@@ -1,0 +1,33 @@
+.star-text-input{
+    color:#05122d;
+    background-color: #c4c4c4;
+    border: 0.15rem none #05122d;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-radius: 0;
+    font-size: 1.25em;
+    box-shadow: none!important;
+    transform: skewX(-20deg);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.star-text-input:focus{
+    background-color: #c4c4c4;
+    border: 0.15rem none #05122d;
+    border-top-style: solid;
+    border-right-style: solid;
+}
+.star-input-label{
+    color:#05122d;
+    font-size: 0.75em;
+    padding-left:0.7rem;
+    font-style: italic;
+}
+.btn-add{
+    border:0.15rem dashed #05122d;
+    padding: 80px !important;
+
+}
+.btn-add:hover{
+    background-color: #05122d;
+}

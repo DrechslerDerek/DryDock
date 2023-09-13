@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-nav">
-    <div class="container-fluid ps-0">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarExpanded" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<nav class="navbar sticky-top navbar-expand-lg bg-nav align-items-start pb-0">
+    <div class="container-fluid ps-0 pe-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarExpanded" aria-controls="navbarExpanded" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots text-white fs-1"></i>
         </button>
-        <div class="collapse navbar-collapse nav-dimensions vh-100 flex-column align-items-start" id="navbarExpanded">
+        <div class="collapse navbar-collapse nav-dimensions flex-column align-items-start" id="navbarExpanded">
             <span class="content-text ps-2"><i class="bi bi-rocket-takeoff me-2"></i>Dry Dock</span>
             <hr class="text-white w-100">
-            <a class="navbar-brand nav-link {{ view=='shipyard'?'active':'' }}"><i class="bi bi-boxes me-2"></i>Shipyard</a>
-            <a class="navbar-brand nav-link {{ view=='view-parts'?'active':'' }}"><i class="bi bi-search me-2"></i>View Parts</a>
-            <a class="navbar-brand nav-link {{ view=='create-part'?'active':'' }}"><i class="bi bi-gear me-2"></i>Create Part</a>
-            <a class="navbar-brand nav-link {{ view=='build-ship'?'active':'' }}"><i class="bi bi-wrench me-2"></i>Build Ship</a>
+            <a class="nav-link {{ view=='shipyard'?'active':'' }}" href="{{ path('shipyardView') }}" data-turbo-frame="tf-view"><i class="bi bi-boxes me-2"></i>Shipyard</a>
+            <a class="nav-link {{ view=='view-parts'?'active':'' }}" href="{{ path('partsView') }}" data-turbo-frame="tf-view"><i class="bi bi-search me-2"></i>View Parts</a>
+            <a class="nav-link {{ view=='create-part'?'active':'' }}" href="{{ path('createPartView') }}" data-turbo-frame="tf-view"><i class="bi bi-gear me-2"></i>Create Part</a>
+            <a class="nav-link {{ view=='build-ship'?'active':'' }}" href="{{ path('buildShipView') }}" data-turbo-frame="tf-view"><i class="bi bi-wrench me-2"></i>Build Ship</a>
         </div>
     </div>
 </nav>
