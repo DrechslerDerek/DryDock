@@ -1,0 +1,74 @@
+@import "bootstrap";
+@import "bootstrap-icons";
+@import "wave.css";
+@font-face {
+    font-family: starfield;
+    src: url('../fonts/BITSUMIS.TTF');
+}
+body {
+    font-family: starfield, serif;
+    letter-spacing: 0.2em;
+    background-color: lightgray;
+}
+.bg-nav{
+    background-color: #05122d;
+
+}
+.nav-dimensions{
+    width: 18.5rem;
+}
+.nav-link{
+    font-size: 1.5em;
+    color:white;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+}
+.nav-link:hover{
+    background-color: white;
+    color:#05122d;
+    cursor: pointer;
+}
+.nav-link.active{
+    color: #9d9d9d;
+}
+.nav-link.active:hover{
+    color: #9d9d9d;
+    background-color: #05122d;
+    cursor: default;
+}
+
+.content-text{
+    font-size: 1.5em;
+    color:white;
+}
+
+.content{
+    color:#05122d;
+    font-size: 1.25em;
+}
+.btn-dark{
+    background-color:#05122d;
+    color: white;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+}
+.dropdown-menu-dark{
+    background-color:#05122d;
+    color: white;
+    letter-spacing: 0.2em;
+    font-size: 0.75em;
+}
+.dropdown-item{
+    background-color:#05122d;
+    color:white;
+}
+.dropdown-item:hover{
+    background-color: white;
+    color:#05122d;
+    cursor: pointer;
+}
+.dropdown-item.active{
+    color: #9d9d9d;
+    background-color:#05122d;
+}

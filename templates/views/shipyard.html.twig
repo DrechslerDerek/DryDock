@@ -1,0 +1,32 @@
+{% extends 'views/main.html.twig' %}
+
+{% block view %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <h1>Shipyard</h1>
+                <p>Welcome to your shipyard, where you can view and edit your ships. To build a ship, create a new part, or view all available parts, chose an option from the navigation on the right</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <h2>Your Fleet</h2>
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Choose a ship
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">Hammerhead Corvette</a></li>
+                        <li><a class="dropdown-item" href="#">Line Breaker</a></li>
+                        <li><a class="dropdown-item" href="#">The Resolute</a></li>
+                        <li><a class="dropdown-item" href="#">Lightning III</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-11 d-flex">
+            </div>
+        </div>
+    </div>
+{% endblock %}
