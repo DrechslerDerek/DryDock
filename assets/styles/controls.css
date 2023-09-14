@@ -4,7 +4,7 @@
     border: 0.15rem none #05122d;
     border-top-style: solid;
     border-right-style: solid;
-    border-radius: 0;
+    border-radius: 0 4px 0 0;
     font-size: 1.25em;
     box-shadow: none!important;
     transform: skewX(-20deg);

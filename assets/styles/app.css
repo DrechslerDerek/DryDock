@@ -5,12 +5,15 @@
 
 @font-face {
     font-family: starfield;
-    src: url('../fonts/BITSUMIS.TTF');
+    src: url('../fonts/Orbitron-VariableFont_wght.ttf');
 }
 body {
     font-family: starfield, serif;
+    font-weight: 800;
     letter-spacing: 0.2em;
     background-color: lightgray;
+    color:#05122d;
+
 }
 .bg-nav{
     background-color: #05122d;
@@ -25,6 +28,13 @@ body {
     .nav-dimensions{
         width: 18.5rem;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #c4c4c4 inset !important;
 }
 
 .nav-link{
@@ -81,4 +91,33 @@ body {
 .dropdown-item.active{
     color: #9d9d9d;
     background-color:#05122d;
+}
+
+.splash-content{
+    margin-top: 12em;
+}
+
+.tab-btn:hover{
+    cursor: pointer;
+    color:#05122d;
+    background: transparent;
+    border:0;
+    border-bottom: 2px solid #05122d!important;
+}
+.tab-btn{
+    color:#05122d;
+    width: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.tab-btn.active{
+    border:0;
+    background: transparent!important;
+    color: #575757!important;
+    border-bottom: 2px solid #05122d!important;
+
+}
+.tab-btn.active:hover{
+    cursor: default;
+    color: #575757;
 }

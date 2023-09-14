@@ -9,12 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ViewController extends AbstractController
 {
-//    #[Route('/', name: 'splash')]
-//    #[Cache(maxage: 3600, public: true)]
-//    public function splash(): Response
-//    {
-//        return $this->render('',[]);
-//    }
+    #[Route('/', name: 'splash')]
+    #[Cache(maxage: 3600, public: true)]
+    public function splash(): Response
+    {
+        return $this->render('splash.html.twig',);
+    }
 
     #[Route('/main', name: 'mainView')]
     #[Cache(maxage: 3600, public: true)]
