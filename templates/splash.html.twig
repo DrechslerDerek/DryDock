@@ -7,49 +7,39 @@
                 <div class="col">
                     <div class="splash-content">
                         <h1 class="text-center display-1"><i class="bi bi-rocket-takeoff me-2"></i>Dry Dock</h1>
-                        <div class="nav nav-tabs flex-row flex-nowrap justify-content-center border-0 mb-3" id="nav-tab"
-                             role="tablist">
-                            <button class="nav-link border-0 tab-btn active" id="welcome-tab" data-bs-toggle="tab"
-                                    data-bs-target="#welcome-panel" type="button" role="tab"
-                                    aria-controls="welcome-panel" aria-selected="true">Home
-                            </button>
-                            <button class="nav-link border-0 tab-btn" id="login-tab" data-bs-toggle="tab"
-                                    data-bs-target="#login-panel" type="button" role="tab" aria-controls="login-tab"
-                                    aria-selected="false">Login
-                            </button>
-                            <button class="nav-link border-0 tab-btn" id="register-tab" data-bs-toggle="tab"
-                                    data-bs-target="#register-panel" type="button" role="tab"
-                                    aria-controls="register-tab" aria-selected="false">Register
-                            </button>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button type="button" class="btn btn-danger fw-bold btn-lg" {{ stimulus_action('splash','showSplash') }}>Let's Go</button>
                         </div>
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="welcome-panel" role="tabpanel"
-                                 aria-labelledby="welcome-tab" tabindex="0">
-                                <p class="fs-4">
-                                    Welcome to Dry Dock, your one-stop destination for crafting your dream spacecraft
-                                    with
-                                    ease and precision. Whether you're an aspiring interstellar explorer, a seasoned
-                                    spaceship engineer, or simply curious about the wonders of celestial engineering,
-                                    you've
-                                    come to the right place. Dry Dock empowers you to design, customize, and
-                                    visualize your very own spacecraft, from sleek starships to formidable space
-                                    stations.
-                                    With intuitive tools and a vast array of components at your disposal, your
-                                    imagination
-                                    is the only limit. Embark on a journey of innovation and creativity as you embark on
-                                    the
-                                    ultimate space-faring adventure. Welcome aboard Dry Dock, where the cosmos is your
-                                    canvas, and the stars are your destination.
-                                </p>
+                        <div class="d-none" {{ stimulus_target('splash','splashDiv') }}>
+                            <div class="nav nav-tabs flex-row flex-nowrap justify-content-center border-0 mb-3" id="nav-tab"
+                                 role="tablist">
+                                <button class="nav-link border-0 tab-btn active" id="welcome-tab" data-bs-toggle="tab"
+                                        data-bs-target="#welcome-panel" type="button" role="tab"
+                                        aria-controls="welcome-panel" aria-selected="true">Home
+                                </button>
+                                <button class="nav-link border-0 tab-btn" id="login-tab" data-bs-toggle="tab"
+                                        data-bs-target="#login-panel" type="button" role="tab" aria-controls="login-tab"
+                                        aria-selected="false">Login
+                                </button>
+                                <button class="nav-link border-0 tab-btn" id="register-tab" data-bs-toggle="tab"
+                                        data-bs-target="#register-panel" type="button" role="tab"
+                                        aria-controls="register-tab" aria-selected="false">Register
+                                </button>
                             </div>
-                            <div class="tab-pane fade" id="login-panel" role="tabpanel" aria-labelledby="login-tab"
-                                 tabindex="0">
-                                {% include'components/login.html.twig' %}
-                            </div>
-                            <div class="tab-pane fade" id="register-panel" role="tabpanel"
-                                 aria-labelledby="register-tab"
-                                 tabindex="0">
-                                {% include'components/register.html.twig' %}
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="welcome-panel" role="tabpanel"
+                                     aria-labelledby="welcome-tab" tabindex="0">
+                                    {% include 'components/welcome-text.html.twig' %}
+                                </div>
+                                <div class="tab-pane fade" id="login-panel" role="tabpanel" aria-labelledby="login-tab"
+                                     tabindex="0">
+                                    {% include'components/login.html.twig' %}
+                                </div>
+                                <div class="tab-pane fade" id="register-panel" role="tabpanel"
+                                     aria-labelledby="register-tab"
+                                     tabindex="0">
+                                    {% include'components/register.html.twig' %}
+                                </div>
                             </div>
                         </div>
                     </div>
