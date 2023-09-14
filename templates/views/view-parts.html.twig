@@ -6,5 +6,15 @@
                 <p>View parts created by you or others, you can only edit or delete parts you've created</p>
             </div>
         </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-11">
+                {% include 'components/parts-filters.html.twig' %}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-11 table-responsive">
+                {% include 'components/parts-table.html.twig' %}
+            </div>
+        </div>
     </div>
 </turbo-frame>
