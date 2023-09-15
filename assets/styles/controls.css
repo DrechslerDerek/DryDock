@@ -74,3 +74,17 @@ th, td{
 tr:hover{
     cursor: pointer;
 }
+
+.input-group-text{
+    background: transparent;
+    border:0;
+    padding: 0 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+.btn-link{
+    color:#05122d;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+
+}
