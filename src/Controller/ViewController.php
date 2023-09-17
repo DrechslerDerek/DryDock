@@ -13,7 +13,7 @@ class ViewController extends AbstractController
     #[Cache(maxage: 3600, public: true)]
     public function splash(): Response
     {
-        return $this->render('splash.html.twig',);
+        return $this->render('splash.html.twig',['showLoginForm' => false]);
     }
 
     #[Route('/main', name: 'mainView')]

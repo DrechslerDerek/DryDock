@@ -1,7 +1,9 @@
 @import "bootstrap";
 @import "bootstrap-icons";
-@import "wave.css";
-@import "controls.css";
+@import "wave";
+@import "controls";
+@import "space.scss";
+@import "animations.scss";
 
 @font-face {
     font-family: starfield;

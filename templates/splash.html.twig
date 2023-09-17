@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="content">
-        <div class="container-lg" {{ stimulus_controller('splash') }}>
+    <section class="content" {{ stimulus_controller('splash') }}>
+        <div class="container-lg">
             <div class="row justify-content-center">
                 <div class="col">
-                    <div class="splash-content">
+                    <div class="splash-content" {{ stimulus_target('splash', 'splashContent') }}>
                         <h1 class="text-center display-1 fw-semibold"><i class="bi bi-rocket-takeoff me-2"></i>Dry Dock</h1>
-                        <div class="d-flex justify-content-center mt-5">
-                            <button type="button" class="btn btn-danger fw-bold btn-lg" {{ stimulus_action('splash','showSplash') }}>Let's Go</button>
+                        <div class="d-flex justify-content-center mt-5 {{ showLoginForm?'d-none':'' }}">
+                            <button type="button" class="btn btn-danger fw-bold btn-lg" {{ stimulus_action('splash','showSplash') }}>Let's Go {{ showLoginForm }}</button>
                         </div>
-                        <div class="d-none" {{ stimulus_target('splash','splashDiv') }}>
+                        <div class="{{ showLoginForm?'':'d-none' }}" {{ stimulus_target('splash','splashDiv') }}>
                             <div class="nav nav-tabs flex-row flex-nowrap justify-content-center border-0 mb-3" id="nav-tab"
                                  role="tablist">
-                                <button class="nav-link border-0 tab-btn active" id="welcome-tab" data-bs-toggle="tab"
+                                <button class="nav-link border-0 tab-btn {{ showLoginForm?'':'active' }}" id="welcome-tab" data-bs-toggle="tab"
                                         data-bs-target="#welcome-panel" type="button" role="tab"
                                         aria-controls="welcome-panel" aria-selected="true">Home
                                 </button>
-                                <button class="nav-link border-0 tab-btn" id="login-tab" data-bs-toggle="tab"
+                                <button class="nav-link border-0 tab-btn {{ showLoginForm?'active':'' }}" id="login-tab" data-bs-toggle="tab"
                                         data-bs-target="#login-panel" type="button" role="tab" aria-controls="login-tab"
                                         aria-selected="false">Login
                                 </button>
@@ -27,11 +27,11 @@
                                 </button>
                             </div>
                             <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="welcome-panel" role="tabpanel"
+                                <div class="tab-pane fade {{ showLoginForm?'':'show active' }}" id="welcome-panel" role="tabpanel"
                                      aria-labelledby="welcome-tab" tabindex="0">
                                     {% include 'components/welcome-text.html.twig' %}
                                 </div>
-                                <div class="tab-pane fade" id="login-panel" role="tabpanel" aria-labelledby="login-tab"
+                                <div class="tab-pane fade {{ showLoginForm?'show active':'' }}" id="login-panel" role="tabpanel" aria-labelledby="login-tab"
                                      tabindex="0">
                                     {% include'components/login.html.twig' %}
                                 </div>
@@ -46,6 +46,12 @@
                 </div>
             </div>
         </div>
+        <div class="row d-none" {{ stimulus_target('splash', 'blastoff') }}>
+            <div class="col d-flex justify-content-center">
+                {% include 'components/space.html.twig' %}
+            </div>
+        </div>
+
         <div class='air air1'></div>
         <div class='air air2'></div>
         <div class='air air3'></div>

@@ -1,0 +1,47 @@
+.stars-container{
+  height: 400px;
+  width: 50%;
+}
+.rain {
+  height: 20px;
+  position: absolute;
+  width: 2px;
+  border-radius: 25px;
+  background-color: #05122d;
+  color:  #05122d;
+}
+
+$rain: 150;
+
+@for $i from 1 through $rain {
+  $top: (random(25) + 50) * 1%;
+  $left: (random(33) + 33) * 1%;
+  $delay: random(10) - 1s;
+
+  .rain:nth-of-type(#{$i}) {
+    animation-name: rain-#{$i};
+    animation-delay: $delay;
+    animation-duration: (random(10)/10) + 0.5s;
+    animation-iteration-count: infinite;
+    left: $left;
+    top: -$top;
+  }
+
+  @Keyframes rain-#{$i} {
+    from {
+      left: $left;
+      top: -$top;
+    }
+    to {
+      opacity: 0;
+      top: $top + 40%;
+    }
+  }
+}
+
+.rocket-flying{
+  position: absolute;
+  left: 48%;
+  top: 50%;
+  z-index: 9999;
+}

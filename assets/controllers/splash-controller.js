@@ -2,11 +2,17 @@ import { Controller } from '@hotwired/stimulus';
 
 /**
  * @property {HTMLElement} splashDivTarget
+ * @property {HTMLElement} blastoffTarget
+ * @property {HTMLElement} splashContentTarget
+ * @property {HTMLElement} loginFormTarget
  */
 export default class extends Controller {
 
     static targets = [
-        'splashDiv'
+        'splashDiv',
+        'blastoff',
+        'splashContent',
+        'loginForm',
     ]
     connect() {
 
@@ -16,6 +22,17 @@ export default class extends Controller {
         event.target.classList.add('d-none')
         this.splashDivTarget.classList.remove('d-none')
         this.play()
+    }
+
+    login() {
+        setTimeout(this.loginRocketAnimation,5000)
+        this.loginFormTarget.submit()
+    }
+
+    loginRocketAnimation(){
+        this.blastoffTarget.classList.add('fade-in')
+        this.blastoffTarget.classList.remove('d-none')
+        this.splashContentTarget.classList.add('d-none')
     }
 
     play(){
