@@ -25,8 +25,10 @@ export default class extends Controller {
     }
 
     login() {
-        setTimeout(this.loginRocketAnimation,5000)
         this.loginFormTarget.submit()
+        // this.loginRocketAnimation();
+        // setTimeout(this.loginRocketAnimation,5000)
+        // this.loginFormTarget.submit()
     }
 
     loginRocketAnimation(){
@@ -48,5 +50,10 @@ export default class extends Controller {
                 //show error
             });
         }
+    }
+
+    formSubmit(event){
+        event.target.classList.add('disabled')
+        event.target.innerHTML = '<div class="spinner-grow text-light" role="status"></div> Registering'
     }
 }

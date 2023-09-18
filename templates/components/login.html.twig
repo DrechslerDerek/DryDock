@@ -1,38 +1,41 @@
-<div class="row justify-content-center mb-4">
-    <div class="col col-lg-5">
-        <div class="d-flex">
-            <div class="w-100">
-                <label class="star-input-label" for="email">Email</label>
-                <input class="form-control star-text-input" type="email"  aria-label="email" id="email">
+<turbo-frame id="tf-login">
+    {{ form_start(loginForm) }}
+        <div class="row justify-content-center mb-4">
+            <div class="col col-lg-5">
+                <div class="d-flex">
+                    <div class="w-100">
+                        {{ form_row(loginForm.email) }}
+                    </div>
+                    <span class="input-group-text align-items-end" ><i class="bi bi-person-fill"></i></span>
+                </div>
             </div>
-            <span class="input-group-text align-items-end" ><i class="bi bi-person-fill"></i></span>
         </div>
-    </div>
-</div>
-<div class="row justify-content-center mb-4">
-    <div class="col col-lg-5">
-        <div class="d-flex">
-            <div class="w-100">
-                <label class="star-input-label" for="password">Password</label>
-                <input class="form-control star-text-input" type="password"  aria-label="password" id="password">
+        <div class="row justify-content-center mb-4">
+            <div class="col col-lg-5">
+                <div class="d-flex">
+                    <div class="w-100">
+                        {{ form_row(loginForm.password) }}
+                    </div>
+                    <span class="input-group-text align-items-end" ><i class="bi bi-shield-lock-fill"></i></span>
+                </div>
             </div>
-            <span class="input-group-text align-items-end" ><i class="bi bi-shield-lock-fill"></i></span>
         </div>
-    </div>
-</div>
-<div class="row justify-content-center mb-3">
-    <div class="col col-lg-5 ps-3 d-flex justify-content-between">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Remember me
-            </label>
+        <div class="row justify-content-center mb-3">
+            <div class="col col-lg-5 ps-3 d-flex justify-content-between">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Remember me
+                    </label>
+                </div>
+                <button type="button" class="btn btn-link p-0 border-0">Forgot Password</button>
+            </div>
         </div>
-        <button type="button" class="btn btn-link p-0 border-0">Forgot Password</button>
-    </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col col-lg-5 ps-3">
-        <button class="btn btn-danger fw-bold btn-lg">Login</button>
-    </div>
-</div>
+        <div class="row justify-content-center">
+            <div class="col col-lg-5 ps-3">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button class="btn btn-danger fw-bold btn-lg" type="button" {{ stimulus_action('splash','login') }}>Login</button>
+            </div>
+        </div>
+    {{ form_end(loginForm) }}
+</turbo-frame>

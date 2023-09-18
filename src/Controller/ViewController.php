@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Forms\LoginType;
+use App\Forms\RegistrationType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\Cache;
@@ -13,7 +15,14 @@ class ViewController extends AbstractController
     #[Cache(maxage: 3600, public: true)]
     public function splash(): Response
     {
-        return $this->render('splash.html.twig',['showLoginForm' => false]);
+        $registrationForm = $this->createForm(RegistrationType::class, [], ['action' => '/register', 'method' => 'POST']);
+        $loginForm = $this->createForm(LoginType::class, [], ['action' => '/login', 'method' => 'POST','attr' => ['data-splash-target' => 'loginForm']]);
+
+        return $this->render('splash.html.twig',[
+            'showLoginForm' => false,
+            'loginForm' => $loginForm,
+            'registrationForm' => $registrationForm
+        ]);
     }
 
     #[Route('/main', name: 'mainView')]
@@ -23,28 +32,28 @@ class ViewController extends AbstractController
         return $this->render('views/main.html.twig',['view' => 'shipyard']);
     }
 
-    #[Route('/shipyard', name: 'shipyardView')]
+    #[Route('/main/shipyard', name: 'shipyardView')]
     #[Cache(maxage: 3600, public: true)]
     public function shipyardView(): Response
     {
         return $this->render('views/shipyard.html.twig',['view' => 'shipyard']);
     }
 
-    #[Route('/view-parts', name: 'partsView')]
+    #[Route('/main/view-parts', name: 'partsView')]
     #[Cache(maxage: 3600, public: true)]
     public function partsView(): Response
     {
         return $this->render('views/view-parts.html.twig',['view' => 'view-parts']);
     }
 
-    #[Route('/create-part', name: 'createPartView')]
+    #[Route('/main/create-part', name: 'createPartView')]
     #[Cache(maxage: 3600, public: true)]
     public function createPartView(): Response
     {
         return $this->render('views/create-part.html.twig',['view' => 'create-part']);
     }
 
-    #[Route('/build-ship', name: 'buildShipView')]
+    #[Route('/main/build-ship', name: 'buildShipView')]
     #[Cache(maxage: 3600, public: true)]
     public function buildShipView(): Response
     {
