@@ -40,6 +40,24 @@ class CaptainRepository extends ServiceEntityRepository implements PasswordUpgra
         $this->getEntityManager()->flush();
     }
 
+    public function save(Captain $captain, bool $flush = false):void
+    {
+        $this->getEntityManager()->persist($captain);
+
+        if($flush){
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Captain $captain, bool $flush = false):void
+    {
+        $this->getEntityManager()->remove($captain);
+
+        if($flush){
+            $this->getEntityManager()->flush();
+        }
+    }
+
 //    /**
 //     * @return Captain[] Returns an array of Captain objects
 //     */

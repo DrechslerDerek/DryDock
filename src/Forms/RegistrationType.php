@@ -13,19 +13,16 @@ class RegistrationType extends AbstractType
     {
         $builder
             ->add('captain', null,[
-                'required' => true,
                 'row_attr' => ['class' => 'w-100'],
                 'label_attr' => ['class' => 'star-input-label'],
                 'attr' => ['class' => 'form-control star-text-input','value' => 'Cpt. '],
             ])
             ->add('email', EmailType::class,[
-                'required' => true,
                 'row_attr' => ['class' => 'w-100'],
                 'label_attr' => ['class' => 'star-input-label'],
                 'attr' => ['class' => 'form-control star-text-input','autocomplete' => 'email'],
             ])
             ->add('password', PasswordType::class,[
-                'required' => true,
                 'row_attr' => ['class' => 'w-100'],
                 'label_attr' => ['class' => 'star-input-label'],
                 'attr' => ['class' => 'form-control star-text-input',],

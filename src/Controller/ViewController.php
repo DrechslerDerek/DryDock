@@ -11,20 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ViewController extends AbstractController
 {
-    #[Route('/', name: 'splash')]
-    #[Cache(maxage: 3600, public: true)]
-    public function splash(): Response
-    {
-        $registrationForm = $this->createForm(RegistrationType::class, [], ['action' => '/register', 'method' => 'POST']);
-        $loginForm = $this->createForm(LoginType::class, [], ['action' => '/login', 'method' => 'POST','attr' => ['data-splash-target' => 'loginForm']]);
-
-        return $this->render('splash.html.twig',[
-            'showLoginForm' => false,
-            'loginForm' => $loginForm,
-            'registrationForm' => $registrationForm
-        ]);
-    }
-
     #[Route('/main', name: 'mainView')]
     #[Cache(maxage: 3600, public: true)]
     public function mainView(): Response

@@ -24,19 +24,6 @@ export default class extends Controller {
         this.play()
     }
 
-    login() {
-        this.loginFormTarget.submit()
-        // this.loginRocketAnimation();
-        // setTimeout(this.loginRocketAnimation,5000)
-        // this.loginFormTarget.submit()
-    }
-
-    loginRocketAnimation(){
-        this.blastoffTarget.classList.add('fade-in')
-        this.blastoffTarget.classList.remove('d-none')
-        this.splashContentTarget.classList.add('d-none')
-    }
-
     play(){
         const audio = new Audio('/build/sounds/Mass-Effect-Trilogy-Extended-Gal.mp3');
         // audio.loop = true;
@@ -53,7 +40,13 @@ export default class extends Controller {
     }
 
     formSubmit(event){
-        event.target.classList.add('disabled')
-        event.target.innerHTML = '<div class="spinner-grow text-light" role="status"></div> Registering'
+        if(
+            document.querySelector('#registration_captain').value.length > 0 &&
+            document.querySelector('#registration_password').value.length > 0 &&
+            document.querySelector('#registration_email').value.length > 0
+        ){
+            event.target.classList.add('disabled')
+            event.target.innerHTML = '<div class="spinner-grow text-light spinner-grow-sm" role="status"></div> Registering...'
+        }
     }
 }

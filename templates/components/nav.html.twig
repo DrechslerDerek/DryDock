@@ -10,6 +10,7 @@
             <a class="nav-link {{ view=='view-parts'?'active':'' }}" href="{{ path('partsView') }}" data-turbo-frame="tf-view"><i class="bi bi-search me-2"></i>View Parts</a>
             <a class="nav-link {{ view=='create-part'?'active':'' }}" href="{{ path('createPartView') }}" data-turbo-frame="tf-view"><i class="bi bi-gear me-2"></i>Create Part</a>
             <a class="nav-link {{ view=='build-ship'?'active':'' }}" href="{{ path('buildShipView') }}" data-turbo-frame="tf-view"><i class="bi bi-wrench me-2"></i>Build Ship</a>
+            <a class="nav-link logout" href="{{ path('logout') }}" data-turbo="false"><i class="bi bi-box-arrow-left me-2"></i>Logout</a>
         </div>
     </div>
 </nav>

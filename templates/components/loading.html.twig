@@ -1,0 +1,9 @@
+<turbo-frame id="{{ turboId }}" target="_top">
+    <div {{ stimulus_controller('loading') }}>
+        <div class="row d-none" {{ stimulus_target('loading', 'blastoff') }}>
+            <div class="col d-flex justify-content-center">
+                {% include 'components/space.html.twig' %}
+            </div>
+        </div>
+    </div>
+</turbo-frame>

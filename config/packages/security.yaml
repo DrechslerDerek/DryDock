@@ -23,6 +23,8 @@ security:
                 enable_csrf: true
                 username_parameter: login[email]
                 password_parameter: login[password]
+#                default_target_path: mainView
+#                always_use_default_target_path: true
             logout:
                 path: logout
             # activate different ways to authenticate
@@ -45,6 +47,6 @@ when@test:
             # reduces the work factor to the lowest possible values.
             Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
                 algorithm: sodium
-                cost: 12 # Lowest possible value for bcrypt
+                cost: 12  # Lowest possible value for bcrypt
                 time_cost: 12 # Lowest possible value for argon
                 memory_cost: 128 # Lowest possible value for argon

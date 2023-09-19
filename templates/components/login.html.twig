@@ -1,5 +1,12 @@
 <turbo-frame id="tf-login">
     {{ form_start(loginForm) }}
+        <div class="row">
+            <div class="col d-flex justify-content-center mt-2">
+            {% if error is defined and error is not empty %}
+                <div class="text-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            </div>
+        </div>
         <div class="row justify-content-center mb-4">
             <div class="col col-lg-5">
                 <div class="d-flex">
@@ -34,7 +41,7 @@
         <div class="row justify-content-center">
             <div class="col col-lg-5 ps-3">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <button class="btn btn-danger fw-bold btn-lg" type="button" {{ stimulus_action('splash','login') }}>Login</button>
+                <button class="btn btn-danger fw-bold btn-lg" type="submit"><i class="bi bi-box-arrow-in-right me-2"></i>Login</button>
             </div>
         </div>
     {{ form_end(loginForm) }}

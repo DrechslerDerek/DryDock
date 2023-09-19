@@ -1,5 +1,12 @@
 <turbo-frame id="tf-register">
     {{ form_start(registrationForm) }}
+    <div class="row justify-content-center mb-4">
+        <div class="col col-lg-5">
+            <div class="text-danger text-center">
+                {{ form_errors(registrationForm) }}
+            </div>
+        </div>
+    </div>
         <div class="row justify-content-center mb-4">
             <div class="col col-lg-5">
                 <div class="d-flex">
