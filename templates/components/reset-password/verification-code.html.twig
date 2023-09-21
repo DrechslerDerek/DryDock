@@ -1,0 +1,28 @@
+<turbo-frame id="tf-reset-password">
+    <div class="row justify-content-center mb-4">
+        <div class="col">
+            <div class="d-flex">
+                <div class="w-100">
+                    <label class="star-input-label required" for="verification-code">One-Time Code</label>
+                    <input type="text" id="verification-code" name="verification-code" required="required" class="form-control star-text-input"/>
+                </div>
+                <span class="input-group-text align-items-end" ><i class="bi bi-shield-lock-fill"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col">
+            <button class="btn btn-danger fw-bold btn-lg" type="submit">Verify</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <p class="font-14 ps-2">Didn't get an email? Resend the code.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <a class="btn btn-dark fw-bold btn-lg" href="/"><i class="bi bi-envelope-at me-2"></i>Resend Email</a>
+        </div>
+    </div>
+</turbo-frame>

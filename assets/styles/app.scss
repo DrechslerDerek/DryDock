@@ -76,6 +76,10 @@ input:-webkit-autofill:active{
     letter-spacing: 0.2em;
     font-size: 1em;
 }
+.btn-dark:hover{
+    background-color: #c4c4c4!important;
+    color: #05122d!important;;
+}
 .dropdown-menu-dark{
     background-color:#05122d;
     color: white;
@@ -123,4 +127,10 @@ input:-webkit-autofill:active{
 .tab-btn.active:hover{
     cursor: default;
     color: #575757;
+}
+.modal-content{
+    background-color: #c4c4c4!important;
+}
+.modal-header{
+    border-bottom: 1px solid #05122d!important;
 }

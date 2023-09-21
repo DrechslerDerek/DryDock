@@ -49,4 +49,11 @@ export default class extends Controller {
             event.target.innerHTML = '<div class="spinner-grow text-light spinner-grow-sm" role="status"></div> Registering...'
         }
     }
+
+    sendEmail(event) {
+        if(document.querySelector('#reset_password_email').value.length > 0){
+            event.target.classList.add('disabled')
+            event.target.innerHTML = '<div class="spinner-grow text-light spinner-grow-sm" role="status"></div> Sending...'
+        }
+    }
 }

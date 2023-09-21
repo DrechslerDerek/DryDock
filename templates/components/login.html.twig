@@ -35,7 +35,7 @@
                         Remember me
                     </label>
                 </div>
-                <button type="button" class="btn btn-link p-0 border-0">Forgot Password</button>
+                <button type="button" class="btn btn-link p-0 border-0" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">Forgot Password</button>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -46,3 +46,35 @@
         </div>
     {{ form_end(loginForm) }}
 </turbo-frame>
+
+<div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="resetPasswordModalLabel">Reset Your Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <turbo-frame id="tf-reset-password">
+                    {{ form_start(resetPasswordForm) }}
+                        <div class="row justify-content-center mb-5">
+                            <div class="col">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        {{ form_row(resetPasswordForm.email) }}
+                                    </div>
+                                    <span class="input-group-text align-items-end" ><i class="bi bi-person-fill"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-5">
+                            <div class="col">
+                                <button class="btn btn-danger fw-bold btn-lg" type="submit" {{ stimulus_action('splash','sendEmail') }}><i class="bi bi-envelope-at me-2"></i>Send Reset Email</button>
+                            </div>
+                        </div>
+                    {{ form_end(resetPasswordForm) }}
+                </turbo-frame>
+            </div>
+        </div>
+    </div>
+</div>
