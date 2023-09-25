@@ -7,13 +7,13 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            <div class="col-11">
-                {% include 'components/parts-filters.html.twig' %}
+            <div class="col-12">
+                {% include 'components/parts/parts-filters.html.twig' %}
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-11 table-responsive">
-                {% include 'components/parts-table.html.twig' %}
+            <div class="col-12 table-responsive mb-5 pb-5" {{ stimulus_controller('parts-table') }}>
+                {% include 'components/parts/parts-table.html.twig' %}
             </div>
         </div>
     </div>

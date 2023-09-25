@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CaptainRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -29,6 +31,14 @@ class Captain implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\OneToMany(mappedBy: 'Creator', targetEntity: Part::class)]
+    private Collection $Parts;
+
+    public function __construct()
+    {
+        $this->Parts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -110,5 +120,35 @@ class Captain implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Part>
+     */
+    public function getParts(): Collection
+    {
+        return $this->Parts;
+    }
+
+    public function addPart(Part $part): static
+    {
+        if (!$this->Parts->contains($part)) {
+            $this->Parts->add($part);
+            $part->setCreator($this);
+        }
+
+        return $this;
+    }
+
+    public function removePart(Part $part): static
+    {
+        if ($this->Parts->removeElement($part)) {
+            // set the owning side to null (unless already changed)
+            if ($part->getCreator() === $this) {
+                $part->setCreator(null);
+            }
+        }
+
+        return $this;
     }
 }

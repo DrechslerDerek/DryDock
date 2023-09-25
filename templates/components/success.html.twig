@@ -2,8 +2,14 @@
     <div class="row">
         <div class="col d-flex justify-content-center mt-5">
             <i class="text-success fs-2 bi bi-check-circle-fill me-2"></i>
-            <br>
             <span class="text-success fs-2">{{ message }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center mt-3">
+            {% if link is defined and link is not empty %}
+                <a class="btn btn-danger" href="{{ link.linkHREF }}">{{ link.linkText }}</a>
+            {% endif %}
         </div>
     </div>
 

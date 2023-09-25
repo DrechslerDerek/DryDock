@@ -1,0 +1,43 @@
+{% if withTableRow %}<tr id="{{ 'part_' ~ id }}">{% endif %}
+    <td>
+        {{ entity.category }}
+    </td>
+    <td>
+        {{ entity.origin }}
+    </td>
+    <td>
+        {{ entity.name }}
+    </td>
+    <td>
+        {{ entity.description }}
+    </td>
+    <td>
+        {{ entity.power }}
+    </td>
+    <td>
+        {{ entity.durability }}
+    </td>
+    <td>
+        {{ entity.cost }}
+    </td>
+    <td>
+        <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <i class="bi bi-gear-fill"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                    <button class="dropdown-item dropdown-edit"
+                            type="button" {{ stimulus_action('parts-table','openEdit') }}
+                            data-partid="{{ id }}"><i class="bi bi-pencil-fill me-2"></i>Edit
+                    </button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button"><i class="bi bi-trash2-fill me-2"></i>Delete
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </td>
+{% if withTableRow %}</tr>{% endif %}

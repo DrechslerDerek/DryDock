@@ -1,0 +1,20 @@
+{# Learn how to use Turbo Streams: https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update #}
+{% block create %}
+    <turbo-stream action="append" target="parts">
+        <template>
+            {% include 'components/parts/parts-row.html.twig' with {withTableRow:true} %}
+        </template>
+    </turbo-stream>
+{% endblock %}
+
+{% block update %}
+    <turbo-stream action="update" target="part_{{ id }}">
+        <template>
+           {% include 'components/parts/parts-row.html.twig' with {withTableRow:false} %}
+        </template>
+    </turbo-stream>
+{% endblock %}
+
+{% block remove %}
+    <turbo-stream action="remove" target="part_"{{ id }}></turbo-stream>
+{% endblock %}

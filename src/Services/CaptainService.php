@@ -12,6 +12,10 @@ class CaptainService
     private UserPasswordHasherInterface $userPasswordHasher;
     private CaptainRepository $captainRepository;
 
+    /**
+     * @param CaptainRepository $captainRepository
+     * @param UserPasswordHasherInterface $userPasswordHasher
+     */
     public function __construct(CaptainRepository $captainRepository, UserPasswordHasherInterface $userPasswordHasher)
     {
         $this->captainRepository = $captainRepository;
@@ -40,5 +44,14 @@ class CaptainService
         }
 
         return true;
+    }
+
+    /**
+     * @param string $email
+     * @return Captain
+     */
+    public function getByEmail(string $email): Captain
+    {
+        return $this->captainRepository->findOneBy(['email' => $email]);
     }
 }
