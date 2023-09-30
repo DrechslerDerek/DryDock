@@ -1,0 +1,20 @@
+
+
+<button class="btn btn-outline-dark outline-btn-blue alert-btn py-3 px-1 pe-2 fs-4" type="button" id="alertDrawerToggle" data-bs-toggle="offcanvas" data-bs-target="#alertDrawer" aria-controls="alert-drawer">
+    <i class="bi bi-bell-fill"></i>
+    <span class="position-absolute top-0 start-0 ms-1 translate-middle badge rounded-pill bg-danger">
+    0
+  </span>
+</button>
+
+
+<div class="offcanvas offcanvas-end drawer-bg" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="alertDrawer" aria-labelledby="alertDrawerLabel" {{ stimulus_controller('alert') }}>
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="alertDrawer">Alerts</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr class="drawer-hr">
+    <div class="offcanvas-body" {{ stimulus_target('alert','drawerElement') }}>
+
+    </div>
+</div>

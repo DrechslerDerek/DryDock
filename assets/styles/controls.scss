@@ -92,3 +92,27 @@ tr:hover{
     background-color: #cb3030!important;
     color: white !important;
 }
+
+.outline-btn-blue{
+    color:#05122d;
+    border: 1px solid #05122d;
+}
+
+.outline-btn-blue:hover{
+    color:#c4c4c4;
+    background-color:#05122d;
+    border: 1px solid #05122d;
+}
+.alert-btn{
+    position:absolute;
+    top:50%;
+    right: -6px;
+}
+
+.drawer-bg{
+    background-color: rgba(196, 196, 196);
+}
+.drawer-hr{
+    background:#05122d;
+    border: 1px solid #05122d;
+}

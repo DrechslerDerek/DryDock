@@ -36,8 +36,8 @@ class KafkaSandbox extends Command
             $conf->set('bootstrap.servers','pkc-921jm.us-east-2.aws.confluent.cloud:9092');
             $conf->set('security.protocol','SASL_SSL');
             $conf->set('sasl.mechanisms','PLAIN');
-            $conf->set('sasl.username','Fake');
-            $conf->set('sasl.password','CopyMe');
+            $conf->set('sasl.username','UFIEBYQIZLYLJ7DK');
+            $conf->set('sasl.password','fbMOhtdN7M5ZB4K9KhPr5FZ9bqSas2NL9+VutY6S23GlGiV8YKRjI587cYHo36Uv');
 
             $output->writeln('creating producer');
             $rk = new Producer($conf);
