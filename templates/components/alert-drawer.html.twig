@@ -8,7 +8,7 @@
 </button>
 
 
-<div class="offcanvas offcanvas-end drawer-bg" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="alertDrawer" aria-labelledby="alertDrawerLabel" {{ stimulus_controller('alert') }}>
+<div class="offcanvas offcanvas-end drawer-bg" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="alertDrawer" aria-labelledby="alertDrawerLabel" {{ stimulus_controller('alert',{userEmail:userEmail}) }}>
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="alertDrawer">Alerts</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

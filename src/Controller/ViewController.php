@@ -23,7 +23,7 @@ class ViewController extends AbstractController
     #[Cache(maxage: 3600, public: true)]
     public function mainView(): Response
     {
-        return $this->render('views/main.html.twig', ['view' => 'shipyard']);
+        return $this->render('views/main.html.twig', ['view' => 'shipyard','userEmail' => $this->getUser()->getUserIdentifier()]);
     }
 
     #[Route('/main/shipyard', name: 'shipyardView')]
