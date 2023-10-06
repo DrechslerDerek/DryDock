@@ -10,13 +10,15 @@ use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\Cache;
+use Symfony\Component\Mercure\HubInterface;
+use Symfony\Component\Mercure\Update;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PartsController extends AbstractController
 {
     #[Route('/main/edit-part/{partId}', name: 'editPart')]
     #[Cache(maxage: 3600, public: true)]
-    public function editPart(int $partId, Request $request, PartService $partService, Security $security): Response
+    public function editPart(int $partId, Request $request, PartService $partService, HubInterface $hub): Response
     {
         $part = $partService->getPartById($partId);
         $editPartForm = $this->createForm(CreatePartType::class, ['part' => $part], ['action' => '/main/edit-part/'.$partId, 'method' => 'POST']);
@@ -24,7 +26,14 @@ class PartsController extends AbstractController
         $editPartForm->handleRequest($request);
         if ($editPartForm->isSubmitted() && $editPartForm->isValid()) {
             try {
-                $partService->updatePart($editPartForm->getData(), $part);
+                $part = $partService->updatePart($editPartForm->getData(), $part);
+                $hub->publish(new Update(
+                    'alerts',
+                    $this->renderView('components/templates/alert.stream.html.twig',
+                        [
+                            'alertHeading' => 'Part Updated'
+                        ])
+                ));
                 return $this->render('components/success.html.twig',
                     [
                         'turboId' => 'tf-edit-part',

@@ -16,6 +16,7 @@ use Symfony\Component\HttpKernel\Attribute\Cache;
 use Symfony\Component\Mercure\HubInterface;
 use Symfony\Component\Mercure\Update;
 use Symfony\Component\Routing\Annotation\Route;
+use function Symfony\Component\Clock\now;
 
 class ViewController extends AbstractController
 {
@@ -45,15 +46,23 @@ class ViewController extends AbstractController
 
     #[Route('/main/create-part', name: 'createPartView')]
     #[Cache(maxage: 3600, public: true)]
-    public function createPartView(Request $request, PartService $partService, Security $security): Response
+    public function createPartView(Request $request, PartService $partService, Security $security, HubInterface $hub): Response
     {
         $createPartForm = $this->createForm(CreatePartType::class, ['part' => new Part()], ['action' => '/main/create-part', 'method' => 'POST']);
 
         $createPartForm->handleRequest($request);
         if ($createPartForm->isSubmitted() && $createPartForm->isValid()) {
             try {
-                $partService->createPart($createPartForm->getData(), $security->getUser());
-
+                $part = $partService->createPart($createPartForm->getData(), $security->getUser());
+                $hub->publish(new Update(
+                    'alerts',
+                    $this->renderView('components/templates/alert.stream.html.twig', [
+                        'alertHeading' => 'Part Created',
+                        'line1' => 'Part Name: '. $part->getName(),
+                        'line2' => 'Creator: '. $part->getCreator()->getCaptainName(),
+                        'line3' => 'Time: '. now()->format('D H:i') ,
+                    ])
+                ));
                 return $this->render('components/success.html.twig',
                     [
                         'turboId' => 'tf-create-a-part',

@@ -44,6 +44,7 @@ class SecurityController extends AbstractController
             return $this->render('components/login.html.twig',[
                 'loginForm' => $loginForm,
                 'registrationForm' => $registrationForm,
+                'resetPasswordForm' => $resetPasswordForm,
                 'last_username' => $lastUsername,
                 'error'         => $error,
             ]);

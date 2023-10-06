@@ -6,6 +6,7 @@ use App\Entity\Captain;
 use App\Entity\Part;
 use App\Repository\PartRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
+use function Symfony\Component\Clock\now;
 
 class PartService
 {
@@ -20,6 +21,7 @@ class PartService
     {
         $this->captainService = $captainService;
         $this->partRepository = $partRepository;
+
     }
 
     /**
@@ -76,7 +78,7 @@ class PartService
         $part->setDurability($data['partDurability']);
         $part->setPower($data['partPower']);
 
-        if(isset($captain)){
+        if (isset($captain)) {
             $part->setCreator($captain);
         }
 
