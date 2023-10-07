@@ -1,0 +1,11 @@
+<div class="dropdown {{ classes }}">
+    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+        <i class="bi bi-{{ this.icon }} me-2"></i> {{ dropdownName }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+        {% for option in this.options %}
+            <li><a class="dropdown-item" href="#">{{ option }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

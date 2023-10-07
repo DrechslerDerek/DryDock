@@ -1,37 +1,7 @@
 <div class="d-flex">
-    <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-            <i class="bi bi-filter me-2"></i>Filter
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">All parts</a></li>
-            <li><a class="dropdown-item" href="#">My parts</a></li>
-            <li><a class="dropdown-item" href="#">Community Parts</a></li>
-        </ul>
-    </div>
-    <div class="dropdown ms-2">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-            <i class="bi bi-layers me-2"></i>Part Type
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Thrusters</a></li>
-            <li><a class="dropdown-item" href="#">Weapons</a></li>
-            <li><a class="dropdown-item" href="#">Cockpits</a></li>
-            <li><a class="dropdown-item" href="#">Warp</a></li>
-            <li><a class="dropdown-item" href="#">Frames</a></li>
-        </ul>
-    </div>
-    <div class="dropdown ms-2">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-            <i class="bi bi-sort-up me-2"></i>Sort
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Category</a></li>
-            <li><a class="dropdown-item" href="#">Power</a></li>
-            <li><a class="dropdown-item" href="#">Name</a></li>
-        </ul>
-    </div>
+    {{ component('Dropdown', {classes:'',dropdownName:'Filter'}) }}
+    {{ component('Dropdown', {classes:'ms-2',dropdownName:'Part Type'}) }}
+    {{ component('Dropdown', {classes:'ms-2',dropdownName:'Sort'}) }}
+    {{ component('Dropdown', {classes:'ms-2',dropdownName:'Test'}) }}
+
 </div>
